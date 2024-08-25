@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test:login": "npx cypress run --spec D:/NetBanking_Cypress_e2e/cypress/e2e/tests/loginTest.cy.js"
+    "test:login": "npx cypress run --spec 'D:/NetBanking_Cypress_e2e/cypress/e2e/tests/loginTest.cy.js'"
   
   },
   "author": "kalai",
