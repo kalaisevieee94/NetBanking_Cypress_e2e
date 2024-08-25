@@ -1,21 +1,21 @@
+
 import { loginPage } from "../../pages/loginPage"
-
-
+import loginData from "../../fixtures/loginData.json"
+const login=new loginPage();
 describe('login',()=>{
-
-    let userdata;
-    before(() => {
-        // Load fixture data before running the tests
-        cy.fixture('loginData').then((data) => {
-          userdata = data;
-        });
-      });
-    it('login',()=>{
-        const login=new loginPage();
+    
+it.only('login',()=>{
+     
         login.launchUrl();
-        login.enterUserID(userdata.userID);
-        login.enterPassword(userdata.password);
+        login.enterUserID(loginData.userID);
+        login.enterPassword(loginData.password);
         login.submitcredentials();
+        //login.clickonlogout();
 
     })
+
+    // it('logincommandsjs',()=>{
+    //     Cypress.login(loginData.userID,loginData.password);
+    
+    //     })
 })
