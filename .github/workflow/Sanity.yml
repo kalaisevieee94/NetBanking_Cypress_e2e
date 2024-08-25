@@ -1,34 +1,14 @@
-name: Cypress Tests
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
+name: Sanity End-to-end tests
+on: push
 jobs:
   cypress-run:
-    runs-on: ubuntu-latest
-
+    runs-on: ubuntu-22.04
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Verify Cypress version
-        run: npx cypress --version
-
-      - name: List Cypress tests
-        run: ls cypress/e2e/tests/
-
-      - name: Run specific Cypress test
-        run: npx cypress run --spec "D:\NetBanking_Cypress_e2e\cypress\fixtures\loginData.json"
+      - name: Checkout
+        uses: actions/checkout@v4
+      # Install npm dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+       with:
+        command:npm run test:login
