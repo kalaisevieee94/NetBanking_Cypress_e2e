@@ -11,4 +11,4 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-         command:npx cypress run --spec D:/NetBanking_Cypress_e2e/cypress/e2e/tests/loginTest.cy.js
+         command:npm run test:login
