@@ -31,4 +31,4 @@ jobs:
         run: ls cypress/e2e/tests/
 
       - name: Run specific Cypress test
-        run: npx cypress run --spec "cypress/e2e/tests/loginTest.cy.js"
+        run: npx cypress run --spec "D:\NetBanking_Cypress_e2e\cypress\fixtures\loginData.json"
