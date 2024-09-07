@@ -1,19 +1,18 @@
-name: Sanity End-to-end tests
-on: push
+name: Cypress Tests
+
+on: [push, pull_request]
+
 jobs:
   cypress-run:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'  # Match your project's Node.js version
+        uses: actions/checkout@v2
 
       - name: Install dependencies
         run: npm install
 
-      - name: Run Cypress tests
-        run: npm run test:login
+      - name: Run Cypress tests in parallel
+        run: |
+          npx cypress run --record --key=9c395abf-efe9-4b77-afd9-7e0116e48ecb --parallel --ci-build-id=${{ github.run_id }}
