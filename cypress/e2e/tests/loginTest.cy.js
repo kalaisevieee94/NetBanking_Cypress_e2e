@@ -10,7 +10,7 @@ it.only('login',()=>{
         login.enterUserID(loginData.userID);
         login.enterPassword(loginData.password);
         login.submitcredentials();
-        //login.clickonlogout();
+        //login.clickonlogout();;
 
     })
 
