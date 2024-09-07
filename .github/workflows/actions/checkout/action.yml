@@ -8,7 +8,7 @@ jobs:
 
     steps:
       - name: Run local checkout action
-        uses: ./.github/actions/checkout  # Path to your local action
+        uses: .github/workflows/actions/checkout  # Path to your local action
 
       - name: Install dependencies
         run: npm install
