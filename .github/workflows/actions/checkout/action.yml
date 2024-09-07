@@ -5,10 +5,10 @@ on: [push, pull_request]
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-    
+
     steps:
-      - name: Checkout code
-        uses: ./.github/ac/checkout  # Local action
+      - name: Run local checkout action
+        uses: ./.github/actions/checkout  # Path to your local action
 
       - name: Install dependencies
         run: npm install
